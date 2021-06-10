@@ -5,7 +5,7 @@ import logo from '../images/globe.png';
 const Header = () => {
     return(
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand>
+            <Navbar.Brand  href={"/"}>
                 <img
                     alt=""
                     src={logo}
@@ -16,7 +16,7 @@ const Header = () => {
                 ReduxGlobe
             </Navbar.Brand>
             <Nav className="mr-auto"></Nav>
-            <Button variant="outline-info">About Us</Button>
+            <Button variant="outline-info" href={"/aboutUs"}>About Us</Button>
     
         </Navbar>
     );

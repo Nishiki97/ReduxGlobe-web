@@ -13,7 +13,7 @@ function App() {
         <Header/>
           <Switch>
             <Route path="/" exact component={CountryList}/>
-            <Route path="/countries/:countyId" exact component={CountryDetails}/>
+            <Route path="/countries/:countryName" exact component={CountryDetails}/>
             <Route path="/aboutUs" exact component={AboutUs}/>
             <Route>404 NOT FOUND!</Route>
           </Switch>

@@ -1,17 +1,23 @@
 import { ActionTypes } from '../constants/actionTypes';
 
 const initState = {
-    countries : [{
-        id : 1,
-        name : 'Japan',
-    }],
+    countries : [],
 };
 
 export const countryReducer = (state = initState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_COUNTRIES:
-            return state;
+            return {...state, countries : payload};
         default:
             return state;
     }
 };
+
+export const selectCountryReducer = (state = {}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.SELECT_COUNTRIES:
+            return {...state, ...payload};
+        default:
+            return state;
+    }
+}
