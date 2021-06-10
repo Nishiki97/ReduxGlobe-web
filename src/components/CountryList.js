@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CountryComponent from './CountryComponent';
 import { setCountries } from '../redux/actions/countriesAction'
 import axios from 'axios';
+import SearchInput from './SearchInput';
 
 const CountryList = () => {
     const countries = useSelector((state) => state);
@@ -25,6 +26,7 @@ const CountryList = () => {
 
     return(
         <div>
+            <SearchInput/>
             <CountryComponent/>
         </div>
     );
