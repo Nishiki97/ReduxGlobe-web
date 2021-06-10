@@ -21,3 +21,12 @@ export const selectedCountryReducer = (state = {}, {type, payload}) => {
             return state;
     }
 };
+
+export const searchCountryReducer = (state = {}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.SEARCH_COUNTRIES:
+            return {...state, ...payload};
+        default:
+            return state;
+    }
+};
