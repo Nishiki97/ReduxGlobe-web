@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 
 const reducers = combineReducers({
     allcountries : countryReducer,
-    country : selectedCountryReducer,
+    selectedcountry : selectedCountryReducer,
     filteredcountry : searchCountryReducer,
 });
 

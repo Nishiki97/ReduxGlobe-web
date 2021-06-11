@@ -17,6 +17,6 @@ export const selectCountries = (country) => {
 export const searchCountries = (country) => {
     return{
         type : ActionTypes.SEARCH_COUNTRIES,
-        payload : country
+        payload : country,
     }
 };

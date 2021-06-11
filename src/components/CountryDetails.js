@@ -4,18 +4,19 @@ import {useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {selectCountries} from '../redux/actions/countriesAction';
 import { useSelector } from 'react-redux';
-import { Container, Row, Col, Image, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const CountryDetails = () => {
-    const country = useSelector((state) => state.country);
+    const country = useSelector((state) => state.selectedcountry);
     const {flag, name, nativeName, captial} = country;
+
+    console.log(name);
 
     const {countryName} = useParams();
 
     const dispatch = useDispatch();
 
     console.log(country);
-    console.log(flag);
 
     const fetchCountryDetails = async () => {
         const response = await axios
@@ -34,7 +35,25 @@ const CountryDetails = () => {
 
     return(
         <div>
-           {Object.keys(country).length === 0 ? (
+            {Object.keys(country).length === 0 ? (
+                <div>Loading.....</div>
+        ) : (
+        <Card style={{ width: '20rem' }}>
+            <Card.Img variant="top" src="" />
+                <Card.Body>
+                    <Card.Title></Card.Title>
+                    <Card.Text></Card.Text>
+                    <Card.Text></Card.Text>
+                </Card.Body>
+        </Card>
+        )}
+        </div>
+    )
+}
+
+export default CountryDetails;
+
+{/* {Object.keys(country).length === 0 ? (
                 <div>Loading.....</div>
             ) : (
             <Container>
@@ -59,10 +78,4 @@ const CountryDetails = () => {
                 </Card>
 
             </Container>
-            )} 
-
-        </div>
-    )
-}
-
-export default CountryDetails;
+            )}  */}
