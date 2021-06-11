@@ -2,15 +2,15 @@ import React, {useEffect} from 'react';
 import axios  from 'axios';
 import {useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {selectCountries} from '../redux/actions/countriesAction';
+import {removeSelectedCountry, selectCountries} from '../redux/actions/countriesAction';
 import { useSelector } from 'react-redux';
 import { Card } from 'react-bootstrap';
 
 const CountryDetails = () => {
     const country = useSelector((state) => state.selectedcountry);
-    const {flag, name, nativeName, captial} = country;
+    //const {flag, name, nativeName, captial} = country;
 
-    console.log(name);
+    console.log(country);
 
     const {countryName} = useParams();
 
@@ -30,6 +30,10 @@ const CountryDetails = () => {
     useEffect(() => {
         if(countryName && countryName !== "")
         fetchCountryDetails();
+
+        return () => {
+            dispatch(removeSelectedCountry());
+        }
 
     }, [countryName]);
 

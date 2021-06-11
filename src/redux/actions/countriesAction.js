@@ -14,9 +14,15 @@ export const selectCountries = (country) => {
     };
 };
 
-export const searchCountries = (country) => {
+export const removeSelectedCountry = () => {
     return{
-        type : ActionTypes.SEARCH_COUNTRIES,
-        payload : country,
-    }
+        type : ActionTypes.REMOVE_SELECT_COUNTRIES,
+    };
 };
+
+// export const searchCountries = (country) => {
+//     return{
+//         type : ActionTypes.SEARCH_COUNTRIES,
+//         payload : country,
+//     }
+// };
